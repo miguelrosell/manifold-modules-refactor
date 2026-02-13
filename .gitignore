@@ -1,0 +1,21 @@
+# Nextflow core
+.nextflow/
+.nextflow.log*
+work/
+results/
+
+# Python
+__pycache__/
+*.pyc
+
+# Data files (Too big for git)
+*.h5ad
+*.csv
+*.loom
+
+# IDE settings
+.vscode/
+.idea/
+
+# System
+.DS_Store
