@@ -19,3 +19,22 @@ __pycache__/
 
 # System
 .DS_Store
+
+# Archivos antiguos y temporales
+generate_dummy.py
+dashboard_results.png
+plot_dashboard.py
+
+# Docker 
+dockerfile
+
+work/
+results/
+.nextflow/
+*.h5ad
+_archive/
+.DS_Store
+__pycache__/
+nf-test
+.nf-test.log
+.nf-test/

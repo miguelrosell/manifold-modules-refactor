@@ -1,37 +1,29 @@
-name: nf-core-manifold-1.0dev
+name: nf-core-manifold
 channels:
   - conda-forge
   - bioconda
   - defaults
 dependencies:
-  # --- CORE SYSTEM ---
-  - python=3.10              # Relaxed versioning for better solver compatibility
+  - python=3.10
   - pip
-  - procps-ng                # Required by Nextflow for memory tracking
-
-  # --- BIOINFORMATICS BASE ---
-  - scanpy=1.9.6
-  - anndata
-  - spatialdata              # Let mamba resolve the best compatible version
-
-  # --- MODULE 1: GEOMETRY ---
-  - scikit-learn
-  - phate                    # Manifold learning
-  - magic-impute             # Data imputation
-
-  # --- MODULE 3: CAUSALITY ---
-  - dowhy
-  - networkx
-
-  # --- UTILS & PLOTTING ---
-  - matplotlib
-  - seaborn=0.12.2           # FIX: Pinned because Scanpy 1.9.6 conflicts with seaborn 0.13.0
-  - pandas<2.0.0             # FIX: Pinned because scprep/phate often fail with pandas 2.x
+  # Core bioinformatics
+  - scanpy>=1.9
+  - pandas
   - numpy
-
-  # --- PIP DEPENDENCIES ---
-  # Libraries installed via pip to avoid conda channel conflicts
-  - pip:
-      - giotto-tda           # Topology library (often missing in conda)
-      - ripser
-      - causal-learn
+  - matplotlib
+  - scikit-learn
+  
+  # Module 1: Geometry
+  - phate
+  
+  # Module 2: Topology
+  - ripser
+  - persim
+  
+  # Module 3: Causality
+  - networkx
+  - python-igraph
+  - leidenalg
+  
+  # System utilities (Required by Nextflow)
+  - procps-ng  
